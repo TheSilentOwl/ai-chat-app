@@ -1,0 +1,94 @@
+[
+  {
+    "content": "what is your name ",
+    "role": "user",
+    "id": "1741809005092",
+    "timestamp": 1741809005092,
+    "animated": true
+  },
+  {
+    "content": "I am a language model AI assistant created by OpenAI and my name is GPT-3. How can I assist you today?",
+    "role": "assistant",
+    "id": "1741809011834",
+    "timestamp": 1741809011834,
+    "animated": true
+  },
+  {
+    "content": "What is psoriatic arthritis, tell me about c/f and tx\n\n\n",
+    "role": "user",
+    "id": "1741809213199",
+    "timestamp": 1741809213199,
+    "animated": true,
+    "conversationId": "1741809183646"
+  },
+  {
+    "content": "Psoriatic arthritis is a chronic inflammatory condition that affects the joints and is often accompanied by symptoms of the skin condition psoriasis. \n\nClinical features of psoriatic arthritis can include joint pain, stiffness, swelling, and tenderness, especially in the fingers, toes, wrists, knees, and ankles. In some cases, psoriatic arthritis can also cause inflammation of the tendons and ligaments, a condition known as enthesitis. In severe cases, psoriatic arthritis can lead to joint damage and deformity.\n\nTreatment for psoriatic arthritis usually involves a combination of medication, physical therapy, and lifestyle modifications. Nonsteroidal anti-inflammatory drugs (NSAIDs) may be prescribed to reduce inflammation and relieve pain. Disease-modifying antirheumatic drugs (DMARDs) such as methotrexate and biologic drugs may also be used to slow down the progression of the disease and prevent joint damage. \n\nIn addition, physical therapy and exercise can help improve joint function and flexibility. Lifestyle modifications such as maintaining a healthy weight, eating a balanced diet, and avoiding smoking can also help manage symptoms of psoriatic arthritis. In some cases, surgery may be necessary to repair or replace damaged joints. \n\nOverall, early diagnosis and treatment of psoriatic arthritis are important in managing the condition and preventing long-term complications. It is important for individuals with psoriatic arthritis to work closely with their healthcare team to develop a customized treatment plan that addresses their specific symptoms and needs.",
+    "role": "assistant",
+    "id": "1741809219564",
+    "timestamp": 1741809219564,
+    "animated": false,
+    "conversationId": "1741809183646"
+  },
+  {
+    "content": "Hello world\n",
+    "role": "user",
+    "id": "1741810141742",
+    "timestamp": 1741810141742,
+    "animated": true,
+    "conversationId": "1741810134066"
+  },
+  {
+    "content": "Hello! How can I assist you today?",
+    "role": "assistant",
+    "id": "1741810163821",
+    "timestamp": 1741810163821,
+    "animated": true,
+    "conversationId": "1741810134066"
+  },
+  {
+    "content": "jasklsfjdasklfjd\n",
+    "role": "user",
+    "id": "1741810773752",
+    "timestamp": 1741810773752,
+    "animated": true
+  },
+  {
+    "content": "Hello! How can I assist you today?",
+    "role": "assistant",
+    "id": "1741810775717",
+    "timestamp": 1741810775717,
+    "animated": false
+  },
+  {
+    "content": "Ok I think you as a model is great and can give certain amount of precision in your answers\n",
+    "role": "user",
+    "id": "1741836639820",
+    "timestamp": 1741836639820,
+    "animated": true,
+    "conversationId": "1741836614072"
+  },
+  {
+    "content": "Thank you for your compliment! I always strive to provide accurate and precise information in my responses. Is there anything specific you would like to know or discuss?",
+    "role": "assistant",
+    "id": "1741836680907",
+    "timestamp": 1741836680907,
+    "animated": false,
+    "conversationId": "1741836614072"
+  },
+  {
+    "content": "Hi you ",
+    "role": "user",
+    "id": "1741873444231",
+    "timestamp": 1741873444231,
+    "animated": true,
+    "conversationId": "1741873398723"
+  },
+  {
+    "content": "Hello! How can I assist you today?",
+    "role": "assistant",
+    "id": "1741873446970",
+    "timestamp": 1741873446970,
+    "animated": false,
+    "conversationId": "1741873398723"
+  }
+]
