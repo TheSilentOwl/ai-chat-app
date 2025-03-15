@@ -26,15 +26,15 @@ export default function SignInPage() {
       case "auth/user-disabled":
         return "This account has been disabled";
       case "auth/user-not-found":
-        return "No account found with this email";
       case "auth/wrong-password":
-        return "Incorrect password";
+        return "Invalid email or password";
       case "auth/network-request-failed":
         return "Network error. Please check your connection";
       case "auth/popup-closed-by-user":
         return "Google sign-in was cancelled";
       default:
-        return "An error occurred. Please try again";
+        console.error("Firebase error code:", error.code);
+        return "unexpected error occurred";
     }
   };
 
@@ -49,7 +49,7 @@ export default function SignInPage() {
       if (error instanceof FirebaseError) {
         setError(getErrorMessage(error));
       } else {
-        setError("An unexpected error occurred");
+        setError("Invalid email or password");
       }
     }
   };
@@ -62,7 +62,7 @@ export default function SignInPage() {
       if (error instanceof FirebaseError) {
         setError(getErrorMessage(error));
       } else {
-        setError("An unexpected error occurred");
+        setError("Error signing in with Google. Please try again.");
       }
     }
   };

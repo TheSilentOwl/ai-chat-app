@@ -14,21 +14,21 @@ import {
 import { db } from "@/lib/firebase";
 
 export interface Message {
+  id: string;
+  conversationId: string;
   content: string;
   role: "user" | "assistant";
-  id: string;
-  timestamp: number;
   animated?: boolean;
-  conversationId: string;
+  timestamp: number;
 }
 
 export interface Conversation {
   id: string;
   userId: string;
   title: string;
+  messages: Message[];
   createdAt: Date;
   updatedAt: Date;
-  messages: Message[];
 }
 
 // Create a new conversation
@@ -46,7 +46,7 @@ export async function createConversation(userId: string, title: string) {
   return {
     id: docRef.id,
     ...conversationData,
-    createdAt: new Date(),
+    createdAt: new Date(), // why is this not serverTimestamps?
     updatedAt: new Date(),
   };
 }

@@ -11,7 +11,7 @@ import {
   signInWithPopup,
   User,
 } from "firebase/auth";
-import { app } from "@/lib/firebase";
+import { app, googleProvider } from "@/lib/firebase";
 
 interface AuthContextType {
   user: User | null;
@@ -64,32 +64,54 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signInWithGoogle = async () => {
     try {
-      const provider = new GoogleAuthProvider();
-      provider.setCustomParameters({
-        prompt: "select_account",
-      });
-      await signInWithPopup(auth, provider);
-    } catch (error) {
-      // Check if the error is due to popup being closed
-      if (error instanceof Error && error.name === "PopupClosedByUserError") {
-        throw new Error("Google sign-in was cancelled");
+      const result = await signInWithPopup(auth, googleProvider);
+      setUser(result.user);
+    } catch (error: any) {
+      // Log detailed error information
+      if (error.code === "auth/unauthorized-domain") {
+        console.error(
+          "Authentication Error: Your domain is not authorized in Firebase Console"
+        );
+        console.error(
+          "Please add your domain to Firebase Console > Authentication > Settings > Authorized domains"
+        );
+        console.error("Current domain:", window.location.hostname);
       }
+
+      // Log the full error object for debugging
+      console.error("Google Sign-in Error:", {
+        code: error.code,
+        message: error.message,
+        fullError: error,
+      });
+
+      // Rethrow the error to be handled by the UI layer if needed
       throw error;
     }
   };
 
+  const logout = async () => {
+    try {
+      await signOut();
+      setUser(null);
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  };
+
+  const value = {
+    user,
+    loading,
+    signIn,
+    signUp,
+    signOut,
+    signInWithGoogle,
+    logout,
+  };
+
   return (
-    <AuthContext.Provider
-      value={{
-        user,
-        loading,
-        signIn,
-        signUp,
-        signOut,
-        signInWithGoogle,
-      }}
-    >
-      {children}
+    <AuthContext.Provider value={value}>
+      {!loading && children}
     </AuthContext.Provider>
   );
 }
